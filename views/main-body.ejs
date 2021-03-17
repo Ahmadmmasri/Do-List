@@ -1,0 +1,58 @@
+<%- include("header") -%>
+<body>
+    <!-- <% if(kindOfDay === 'Saturday') { %>
+    <h1>it is work day <%=kindOfDay%></h1>
+    <% } else if (kindOfDay === 'Sunday') { %>
+    <h1 style="color: rgb(207, 220, 20);"> it is work day <%=kindOfDay%></h1>
+    <% } else if (kindOfDay === 'Monday') { %>
+    <h1> it is work day <%=kindOfDay%></h1>
+    <% } else if (kindOfDay === 'Tuesday') { %>
+    <h1>it is work day <%=kindOfDay%></h1>
+    <% } else if (kindOfDay === 'Wednesday') { %>
+    <h1>it is work day <%=kindOfDay%></h1> 
+    <% } else if (kindOfDay === 'Thursday') { %>
+    <h1>it is work day <%=kindOfDay%></h1>
+    <% } else { %>
+    <h1>it is work day <%=kindOfDay%></h1> 
+     <%}%> -->
+    <div>
+        <h1><%= dayInNumber %></h1>
+        <h2> <%= kindOfDay %></h2>
+    </div>
+        <ul>
+            <% for (let i=0;i < newItem.length;i++ ) {%>
+                    <div id="main-card" class="card text-center cardView" >
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Activity <%=i+1 %></h5>
+                        <%if (newItem[i].length !== 0) {%>
+                        <input id="check" type="checkbox">
+                        <p class="card-text"> <%= newItem[i] %></p>
+                        <a id="rem" href="#" class="btn" onclick="remove()">
+                            x
+                        </a>
+                            
+                    <% } else {%>
+                        <p>empty</p>
+                        <a id="rem" href="#" class="btn" onclick="remove()">
+                            x
+                        </a>
+                            <%}%>
+                    </div>
+                </div>
+                <%}%>
+                <hr>
+            <form action="/" method="POST">
+                <label>Add Note</label>
+                <br>
+                
+                <textarea id="inputFeild" class="Fe" type="text" name="value" spellcheck="true" aria-multiline="true" placeholder="Add note" rows="5"></textarea>
+                <br>
+                <button type="submit" class="btn_con">+</button>
+            </form>
+        </ul>
+
+        <script src='js/main.js'></script>
+
+
+</body>
+</html>
